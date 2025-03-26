@@ -134,7 +134,8 @@ class HomePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              final updatedUser = user.copyWith(
+              final updatedUser = UserModel(
+                id: user.id,
                 username: usernameController.text,
                 email: emailController.text,
               );

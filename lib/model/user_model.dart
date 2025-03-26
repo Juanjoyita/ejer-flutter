@@ -11,28 +11,14 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      id: json['\$id'] ?? json['id'] ?? '',  
+      id: json['\$id'] ?? '',  // Aseguramos que coincida con la clave que usamos arriba
       username: json['username'] ?? '',
       email: json['email'] ?? '',
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,          // Include id in toJson
     'username': username,
     'email': email,
   };
-
-  // Add a copyWith method for updates
-  UserModel copyWith({
-    String? id,
-    String? username,
-    String? email,
-  }) {
-    return UserModel(
-      id: id ?? this.id,
-      username: username ?? this.username,
-      email: email ?? this.email,
-    );
-  }
 }
